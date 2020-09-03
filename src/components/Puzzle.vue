@@ -36,7 +36,7 @@ export default {
       var self = this
       this.setkey()
       self.errorMsg = ''
-      axios.post('/api/answer/',
+      axios.post('https://treasure-puzzle.herokuapp.com/api/answer/',
         {
           key: this.key,
           id: this.id

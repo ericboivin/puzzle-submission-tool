@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>Pirate puzzle administration page</h2>
+    <h2>Treasure hunt administration page</h2>
     <br>
     <div v-if="!$store.state.loggedIn">
     <h3>Log in</h3>
@@ -58,7 +58,7 @@ export default {
     this.refreshRoster()
   },
   beforeCreate: function () {
-    axios.get('/api/adminPuzzle/team')
+    axios.get('https://treasure-puzzle.herokuapp.comapi/adminPuzzle/team')
       .then(response => {
         // JSON responses are automatically parsed.
         let teams = response.data
@@ -80,7 +80,7 @@ export default {
   methods: {
     refreshRoster () {
       var self = this
-      axios.get('/api/adminPuzzle/team')
+      axios.get('https://treasure-puzzle.herokuapp.com/api/adminPuzzle/team')
         .then(response => {
           // JSON responses are automatically parsed.
           let teams = response.data
@@ -101,7 +101,7 @@ export default {
     },
     create () {
       var self = this
-      axios.post('/api/adminPuzzle/team',
+      axios.post('https://treasure-puzzle.herokuapp.com/api/adminPuzzle/team',
         {
           teamName: this.newName
         })
@@ -115,7 +115,7 @@ export default {
     },
     login () {
       var self = this
-      axios.post('/api/adminPuzzle/login',
+      axios.post('https://treasure-puzzle.herokuapp.com/api/adminPuzzle/login',
         {
           adminName: this.adminName,
           password: this.password
