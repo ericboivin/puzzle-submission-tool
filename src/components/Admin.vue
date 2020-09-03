@@ -58,7 +58,7 @@ export default {
     this.refreshRoster()
   },
   beforeCreate: function () {
-    axios.get('https://treasure-puzzle.herokuapp.comapi/adminPuzzle/team')
+    axios.get('https://treasure-puzzle.herokuapp.com/api/adminPuzzle/team')
       .then(response => {
         // JSON responses are automatically parsed.
         let teams = response.data
