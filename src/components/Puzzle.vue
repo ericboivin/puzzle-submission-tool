@@ -34,7 +34,6 @@ export default {
   methods: {
     confirm () {
       var self = this
-      this.setkey()
       self.errorMsg = ''
       axios.post('https://treasure-puzzle.herokuapp.com/api/answer/',
         {
@@ -42,18 +41,15 @@ export default {
           id: this.id
         })
         .then(function (response) {
+          self.errorMsg = 'Correct! Answer submitted.'
           if (response.data.startsWith('6')) {
             self.$store.commit('finished', response.data)
           }
-          self.errorMsg = 'Correct! Answer submitted.'
         })
         .catch(function (error) {
           console.log(error)
           self.errorMsg = 'Error - ' + error.response.data
         })
-    },
-    setkey () {
-      this.$store.key = this.key
     }
   }
 }
