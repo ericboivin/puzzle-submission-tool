@@ -101,7 +101,7 @@ export default {
     },
     create () {
       var self = this
-      axios.post('http://localhost:5000/api/adminPuzzle/team',
+      axios.post('/api/adminPuzzle/team',
         {
           teamName: this.newName
         })
@@ -115,7 +115,7 @@ export default {
     },
     login () {
       var self = this
-      axios.post('http://localhost:5000/api/adminPuzzle/login',
+      axios.post('/api/adminPuzzle/login',
         {
           adminName: this.adminName,
           password: this.password
