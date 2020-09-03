@@ -2,8 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 const routerOptions = [
   { path: '/', component: 'Puzzle' },
-  { path: '/adminPuzzle', component: 'Admin' },
-  { path: '/treasureMap', component: 'Map' }
+  { path: '/adminPuzzle', component: 'Admin' }
 ]
 const routes = routerOptions.map(route => {
   return {

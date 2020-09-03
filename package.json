@@ -1,7 +1,7 @@
 {
-  "name": "github-stickers-chooser",
+  "name": "puzzle-submission-tool",
   "version": "1.0.0",
-  "description": "A Vue.js WebApp allowing students to choose their desired GitHub Octocat sticker",
+  "description": "A Vue.js WebApp to submit answers for a treasure hunt",
   "author": "Eric Boivin <ericboivin@gmail.com>",
   "private": true,
   "scripts": {
