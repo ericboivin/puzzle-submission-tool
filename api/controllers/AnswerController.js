@@ -11,7 +11,7 @@ var Team = require('../models/Team');
 router.post('/', function (req, res) {
   console.log(req.body.key, req.body.id)
   Team.findOne({key: req.body.id}, function (err, team){
-      if (err) return res.status(500).send("Problem encountered while finding the team");
+      if (err) return res.status(500).send(err);
       if (team) {
         Answer.findOne({key: req.body.key.toUpperCase()}, function (err, answer){
             if (err) return res.status(500).send("Problem encountered while returning the answer");
