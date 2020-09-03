@@ -22,7 +22,7 @@ router.post('/', function (req, res) {
                 let update = { completedQuestions: team.completedQuestions }
                 let opts = { new: true}
                 Team.findOneAndUpdate(filter, update, opts, function (err, updatedTeam){
-                  if (err) return res.status(500).send(err);
+                  if (err) return res.status(500).send("Problem encountered while updating the results");
                   let count
                   console.log('avant:'+count)
                   Answer.count({}, function(err, c) {

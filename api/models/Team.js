@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var TeamSchema  = new mongoose.Schema({
     name: String,
     key: String,
-    completedQuestions: [{ type: String , unique: true }]
+    completedQuestions: [{ type: String }]
 });
 
 mongoose.model('teams', TeamSchema);
