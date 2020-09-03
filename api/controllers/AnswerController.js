@@ -11,7 +11,7 @@ var Team = require('../models/Team');
 router.post('/', function (req, res) {
   console.log(req.body.key, req.body.id)
   Team.findOne({key: req.body.id}, function (err, team){
-      if (err) return res.status(500).send(err);
+      if (err) return res.status(500).send("Problem encountered while finding the team");
       if (team) {
         Answer.findOne({key: req.body.key.toUpperCase()}, function (err, answer){
             if (err) return res.status(500).send("Problem encountered while returning the answer");
@@ -22,7 +22,7 @@ router.post('/', function (req, res) {
                 let update = { completedQuestions: team.completedQuestions }
                 let opts = { new: true}
                 Team.findOneAndUpdate(filter, update, opts, function (err, updatedTeam){
-                  if (err) return res.status(500).send("Problem encountered while updating the results");
+                  if (err) return res.status(500).send(err);
                   let count
                   console.log('avant:'+count)
                   Answer.count({}, function(err, c) {
